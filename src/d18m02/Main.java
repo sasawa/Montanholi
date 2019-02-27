@@ -1,8 +1,10 @@
-package Renato;
+package d18m02;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+
+import javax.swing.JOptionPane;
 
 public class Main {
 
@@ -82,6 +84,31 @@ public class Main {
 		
 	}
 	static void ativ6(Scanner entry) {
+		int ciclos;
+		double[] qtdes, precos;
+		
+		System.out.println("Insira a quantidade de produtos a ser inserida");
+		ciclos = entry.nextInt();	
+		
+		qtdes = new double[ciclos];
+		precos = new double[ciclos];
+		
+		for (int i = 0; i < ciclos; i++) {
+			qtdes[i] = inserirDouble("Insira a quantidade do produto "+(i+1));
+			precos[i] = inserirDouble("Insira o preço do produto "+(i+1));
+		}
+		
+		
+		
+	}
+	
+	static double inserirDouble(String msg) {
+		double a;
+		do {
+			a = Double.parseDouble(JOptionPane.showInputDialog(msg));		
+		}while( a < 0);
+		
+		return a;
 		
 	}
 	
